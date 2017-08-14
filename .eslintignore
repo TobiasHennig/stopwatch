@@ -1,0 +1,5 @@
+coverage
+demos
+dist
+karma.conf.js
+node_modules

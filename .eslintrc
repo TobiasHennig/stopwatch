@@ -1,0 +1,24 @@
+{
+  "extends": [
+      "prettier",
+      "eslint:recommended"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+      "browser": true,
+      "es6": true,
+      "jasmine": true
+  },
+  "plugins": [
+      "prettier"
+  ],
+  "rules": {
+      "prettier/prettier": ["error", {"singleQuote": true}]
+  },
+  "globals": {
+      "StopWatch": true,
+      "Timing": true
+  }
+}

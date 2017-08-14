@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Simple demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 2;
+      margin: 5rem auto;
+      width: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Simple demo</h1>
+  <h2>User Timing</h2>
+  <p>If your Browser supports `performance.mark()`, open your DevTools and <a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference" target="_blank">record the runtime performance</a>. The measurement can be shown under "User Timing".</p>
+  <button id="btn-ttfi">Click me to create the "time_to_first_interaction" timing</button>
+
+  <script src="../dist/StopWatch.js"></script>
+  <script>
+    // For demo purposes: Fake Google Analytics send timing function
+    window.ga = function(command, hitType, timingCategory, timingVar, timingValue) {
+      console.log('%cGoogle Analytics:', 'font-weight: bold;', `${command}, ${hitType}, ${timingCategory}, ${timingVar}, ${timingValue}`);
+    };
+  </script>
+  <script>
+    // Create a new measurement
+    StopWatch.create('load', {
+      category: 'JS Dependencies'
+    });
+    // Get the timing by name
+    let timing = StopWatch.get('load');
+    // Start the timing
+    timing.start();
+    // ... later ...
+    setTimeout(function () {
+      // Stop the timing
+      timing.stop();
+      // Send the timing duration to Google Analytics
+      timing.send();
+    }, 500);
+
+    // Create a timestamp
+    let ttfi = StopWatch.create('time_to_first_interaction', {
+      category: 'Timestamps'
+    });
+    let btn = document.getElementById('btn-ttfi');
+    btn.addEventListener('click', e => {
+      ttfi.stop();
+      ttfi.send();
+    });
+  </script>
+</body>
+
+</html>
