@@ -1,4 +1,8 @@
-# Stopwatch
+<div align="center">
+  <img src="https://github.com/TobiasHennig/stopwatch/blob/master/stopwatchjs.png?raw=true" alt="StopWatch.js Logo" width="170" height="190"/>
+</div>
+
+# StopWatch
 > Accurately measure elapsed time in JavaScript.
 
 ## Quick start
