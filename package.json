@@ -1,7 +1,7 @@
 {
   "name": "stopwatch",
   "version": "1.0.0",
-  "description": "",
+  "description": "Accurately measure elapsed time in JavaScript",
   "main": "dist/StopWatch.min.js",
   "scripts": {
     "test": "karma start karma.conf.js",
