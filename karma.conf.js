@@ -74,7 +74,7 @@ module.exports = function (config) {
         require('rollup-plugin-istanbul')({
           exclude: ['test/*.js']
         }),
-        require('rollup-plugin-babel')(),
+        require('rollup-plugin-buble')(),
       ],
       format: 'umd',
       name: 'StopWatch'

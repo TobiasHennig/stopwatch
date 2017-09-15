@@ -1,20 +1,37 @@
-import babel from 'rollup-plugin-babel';
+import buble from 'rollup-plugin-buble';
 import filesize from 'rollup-plugin-filesize';
+import license from 'rollup-plugin-license';
 import uglify from 'rollup-plugin-uglify';
 
 export default [
   {
-    dest: 'dist/StopWatch.js',
-    entry: 'src/StopWatch.js',
-    format: 'umd',
-    moduleName: 'StopWatch',
-    plugins: [babel()]
+    input: 'src/StopWatch.js',
+    output: {
+      file: 'dist/StopWatch.js',
+      format: 'umd'
+    },
+    name: 'StopWatch',
+    plugins: [
+      buble(),
+      license({
+        banner: `/*! StopWatch v<%= pkg.version %> | (c) Tobias Hennig | License MIT */`
+      })
+    ]
   },
   {
-    dest: 'dist/StopWatch.min.js',
-    entry: 'src/StopWatch.js',
-    format: 'umd',
-    moduleName: 'StopWatch',
-    plugins: [babel(), uglify(), filesize()]
+    input: 'src/StopWatch.js',
+    output: {
+      file: 'dist/StopWatch.min.js',
+      format: 'umd'
+    },
+    name: 'StopWatch',
+    plugins: [
+      buble(),
+      uglify(),
+      license({
+        banner: `/*! StopWatch v<%= pkg.version %> | (c) Tobias Hennig | License MIT */`
+      }),
+      filesize()
+    ]
   }
 ];
