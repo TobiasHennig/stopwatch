@@ -5,6 +5,10 @@
 # StopWatch
 > Accurately measure elapsed time in JavaScript.
 
+* 784 B minified and gzipped
+* No external dependencies
+* Send timings to [Google Analytics User Timing](https://developers.google.com/analytics/devguides/collection/analyticsjs/user-timings)
+
 ## Quick start
 
 1. Include StopWatch script into your html document.
