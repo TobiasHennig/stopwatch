@@ -66,8 +66,12 @@ describe('StopWatch', () => {
       expect(StopWatch._timings).toEqual([]);
     });
     it('should clear all performance marks', () => {
-      StopWatch.create('name').start().stop();
-      StopWatch.create('anotherName').start().stop();
+      StopWatch.create('name')
+        .start()
+        .stop();
+      StopWatch.create('anotherName')
+        .start()
+        .stop();
       StopWatch.clear();
       expect(performance.getEntriesByType('mark').length).toEqual(0);
       expect(performance.getEntriesByType('measure').length).toEqual(0);
@@ -79,8 +83,12 @@ describe('StopWatch', () => {
       expect(StopWatch._timings.length).toEqual(1);
     });
     it('should clear a specific performance marks', () => {
-      StopWatch.create('name').start().stop();
-      StopWatch.create('anotherName').start().stop();
+      StopWatch.create('name')
+        .start()
+        .stop();
+      StopWatch.create('anotherName')
+        .start()
+        .stop();
       StopWatch.clear('name');
       expect(performance.getEntriesByType('mark').length).toEqual(2);
       expect(performance.getEntriesByType('measure').length).toEqual(1);

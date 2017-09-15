@@ -53,7 +53,10 @@ describe('Timing', () => {
       expect(timing.clear).toBeDefined();
     });
     it('should clear the performance mark if supported', () => {
-      timing.start().stop().clear();
+      timing
+        .start()
+        .stop()
+        .clear();
       expect(
         performance.getEntriesByName('stopwatch:mark_name_start')[0]
       ).not.toBeDefined();
