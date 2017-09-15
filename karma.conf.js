@@ -15,7 +15,7 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'src/*.js', included: false },
+      { pattern: 'src/*.js', watched: false },
       'test/*.js'
     ],
 
@@ -77,7 +77,7 @@ module.exports = function (config) {
         require('rollup-plugin-babel')(),
       ],
       format: 'umd',
-      moduleName: 'StopWatch'
+      name: 'StopWatch'
     },
   })
 }
