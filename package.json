@@ -7,8 +7,7 @@
     "test": "karma start karma.conf.js",
     "lint": "eslint .",
     "prebuild": "rimraf dist",
-    "build": "rollup -c",
-    "postbuild": "uglifyjs dist/StopWatch.js --compress --mangle --output dist/StopWatch.min.js"
+    "build": "rollup -c"
   },
   "keywords": [
     "analytics",
@@ -38,7 +37,8 @@
     "rimraf": "^2.6.1",
     "rollup": "^0.47.4",
     "rollup-plugin-babel": "^3.0.1",
+    "rollup-plugin-filesize": "^1.4.2",
     "rollup-plugin-istanbul": "^1.1.0",
-    "uglify-js": "^3.0.27"
+    "rollup-plugin-uglify": "^2.0.1"
   }
 }
