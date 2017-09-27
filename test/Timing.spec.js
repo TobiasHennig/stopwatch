@@ -30,6 +30,12 @@ describe('Timing', () => {
     it('should exists', () => {
       expect(timing.stop).toBeDefined();
     });
+    it('should throw an error if start time is missing', () => {
+      var fn = function() {
+        timing.stop();
+      };
+      expect(fn).toThrowError('Start time is missing.');
+    });
     it('should stop the timing', () => {
       timing.start().stop();
       expect(timing.duration).toBeGreaterThan(0);

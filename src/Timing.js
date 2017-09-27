@@ -5,10 +5,10 @@ export default class Timing {
     this.name = name;
     this.category;
     this.duration = -1;
-    this.startTime = 0;
+    this.startTime = -1;
   }
   static now() {
-    return performance.now();
+    return performance && performance.now ? performance.now() : Date.now();
   }
   start() {
     this.startTime = this.constructor.now();
@@ -19,6 +19,7 @@ export default class Timing {
     return this;
   }
   stop() {
+    if (this.startTime === -1) throw new Error('Start time is missing.');
     let mark = `stopwatch:mark_${this.name}_`;
     this.duration = this.constructor.now() - this.startTime;
     /* istanbul ignore else */
