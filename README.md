@@ -5,7 +5,7 @@
 # StopWatch
 > Accurately measure elapsed time in JavaScript.
 
-* 784 B minified and gzipped
+* 814 B minified and gzipped
 * No external dependencies
 * Send timings to [Google Analytics User Timing](https://developers.google.com/analytics/devguides/collection/analyticsjs/user-timings)
 
@@ -44,7 +44,7 @@ The core technology behind this library is `performance.now()` which has a [good
 * Safari 8+
 * Opera 15+
 * iOS Safari 8+
-* Android 4.4+
+* Android 4.1+
 
 ## Getting started
 
