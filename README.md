@@ -77,6 +77,12 @@ Clear a timing by name or clear all stopwatch timings.
 ### StopWatch.send(name?: string): StopWatch
 Send a timing by name or send all timings to [Google Analytics User Timing](https://developers.google.com/analytics/devguides/collection/analyticsjs/user-timings).
 
+### new Timing(name): Timing
+Creates a new timing.
+
+### Timing.now(): DOMHighResTimeStamp|Number
+Returns a timestamp.
+
 ### Timing.start(): Timing
 Start the timing. Creates a start performance mark if supported.
 
