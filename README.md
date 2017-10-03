@@ -32,6 +32,7 @@ timing.send();
 To see the script in action, open the example in the `examples` folder.
 
 * **simple.html** - Simple example which use most of the functions
+* **requirejs.html** - [RequireJS](http://requirejs.org/) example which use most of the functions
 
 ## Support
 
