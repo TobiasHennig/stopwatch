@@ -49,6 +49,7 @@
     let ttfi = StopWatch.create('time_to_first_interaction', {
       category: 'Timestamps'
     });
+    ttfi.start();
     let btn = document.getElementById('btn-ttfi');
     btn.addEventListener('click', e => {
       ttfi.stop();
