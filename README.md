@@ -2,7 +2,7 @@
   <img src="https://github.com/TobiasHennig/stopwatch/blob/master/stopwatchjs.png?raw=true" alt="StopWatch.js Logo" width="170" height="190"/>
 </div>
 
-# StopWatch
+# StopWatch [![Build Status](https://travis-ci.org/TobiasHennig/stopwatch.svg?branch=master)](https://travis-ci.org/TobiasHennig/stopwatch)
 > Accurately measure elapsed time in JavaScript.
 
 * 814 B minified and gzipped
