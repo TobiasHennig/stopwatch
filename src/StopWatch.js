@@ -5,9 +5,11 @@ class StopWatch {
     this._timings = [];
   }
   static find(timings, name) {
-    return timings.find(timing => {
-      return timing.name === name;
-    });
+    return (
+      timings.find(timing => {
+        return timing.name === name;
+      }) || null
+    );
   }
   static clear(timings, timing) {
     for (let i = 0; i < timings.length; i++) {
@@ -31,9 +33,7 @@ class StopWatch {
   get(name) {
     let timings = this._timings;
     if (typeof name === 'string') {
-      let timing = this.constructor.find(timings, name);
-      if (!timing) throw new Error('Timing is missing.');
-      return timing;
+      return this.constructor.find(timings, name);
     } else {
       return this._timings;
     }

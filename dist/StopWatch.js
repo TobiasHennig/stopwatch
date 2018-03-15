@@ -1,4 +1,4 @@
-/*! StopWatch v1.1.0 | (c) Tobias Hennig | License MIT */
+/*! StopWatch v1.2.0 | (c) Tobias Hennig | License MIT */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
@@ -67,9 +67,11 @@ var StopWatch = function StopWatch() {
   this._timings = [];
 };
 StopWatch.find = function find (timings, name) {
-  return timings.find(function (timing) {
-    return timing.name === name;
-  });
+  return (
+    timings.find(function (timing) {
+      return timing.name === name;
+    }) || null
+  );
 };
 StopWatch.clear = function clear (timings, timing) {
   for (var i = 0; i < timings.length; i++) {
@@ -93,9 +95,7 @@ StopWatch.prototype.create = function create (name, options) {
 StopWatch.prototype.get = function get (name) {
   var timings = this._timings;
   if (typeof name === 'string') {
-    var timing = this.constructor.find(timings, name);
-    if (!timing) { throw new Error('Timing is missing.'); }
-    return timing;
+    return this.constructor.find(timings, name);
   } else {
     return this._timings;
   }

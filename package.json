@@ -1,6 +1,6 @@
 {
   "name": "stopwatch",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Accurately measure elapsed time in JavaScript",
   "main": "dist/StopWatch.min.js",
   "scripts": {

@@ -42,11 +42,9 @@ describe('StopWatch', () => {
       let timings = StopWatch.get();
       expect(timings).toEqual([]);
     });
-    it('should throw an error if a specific timing is missing', () => {
-      var fn = function() {
-        StopWatch.get('name');
-      };
-      expect(fn).toThrowError('Timing is missing.');
+    it('should return `null` if a specific timing is missing', () => {
+      let missing = StopWatch.get('name');
+      expect(missing).toBeNull();
     });
     it('should return a specific timing', () => {
       StopWatch.create('name');
