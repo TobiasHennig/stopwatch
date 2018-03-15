@@ -36,9 +36,13 @@ describe('Timing', () => {
       };
       expect(fn).toThrowError('Start time is missing.');
     });
-    it('should stop the timing', () => {
-      timing.start().stop();
-      expect(timing.duration).toBeGreaterThan(0);
+    it('should stop the timing', done => {
+      timing.start();
+      setTimeout(() => {
+        timing.stop();
+        expect(timing.duration).toBeGreaterThan(0);
+        done();
+      }, 1);
     });
     it('should create a performance mark if supported', () => {
       timing.start().stop();
