@@ -8,9 +8,9 @@ export default [
     input: 'src/StopWatch.js',
     output: {
       file: 'dist/StopWatch.js',
-      format: 'umd'
+      format: 'umd',
+      name: 'StopWatch'
     },
-    name: 'StopWatch',
     plugins: [
       buble(),
       license({
@@ -22,9 +22,9 @@ export default [
     input: 'src/StopWatch.js',
     output: {
       file: 'dist/StopWatch.min.js',
-      format: 'umd'
+      format: 'umd',
+      name: 'StopWatch'
     },
-    name: 'StopWatch',
     plugins: [
       buble(),
       uglify(),

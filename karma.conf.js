@@ -76,8 +76,10 @@ module.exports = function (config) {
         }),
         require('rollup-plugin-buble')(),
       ],
-      format: 'umd',
-      name: 'StopWatch'
+      output: {
+        format: 'umd',
+        name: 'StopWatch'
+      },
     },
   })
 }
