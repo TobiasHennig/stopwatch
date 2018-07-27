@@ -41,9 +41,9 @@ class StopWatch {
   clear(name) {
     let timings = this._timings;
     if (typeof name === 'string') {
-      let timing = this.constructor.find(timings, name);
+      let timing = StopWatch.find(timings, name);
       timing.clear();
-      this.constructor.clear(timings, timing);
+      StopWatch.clear(timings, timing);
     } else {
       timings.forEach(timing => timing.clear());
       timings.length = 0;
@@ -53,11 +53,11 @@ class StopWatch {
   send(name) {
     let timings = this._timings;
     if (typeof name === 'string') {
-      let timing = this.constructor.find(timings, name);
+      let timing = StopWatch.find(timings, name);
       if (!timing) throw new Error('Timing is missing.');
       timing.send();
     } else {
-      this.constructor.send(timings);
+      StopWatch.send(timings);
     }
     return this;
   }
