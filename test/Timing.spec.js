@@ -10,6 +10,12 @@ describe('Timing', () => {
     performance.clearMeasures();
   });
 
+  describe('constructor', () => {
+    it('should define a default category', () => {
+      expect(timing.category).toEqual('default');
+    });
+  });
+
   describe('#start', () => {
     it('should exists', () => {
       expect(timing.start).toBeDefined();
@@ -82,12 +88,6 @@ describe('Timing', () => {
   describe('#send', () => {
     it('should exists', () => {
       expect(timing.send).toBeDefined();
-    });
-    it('should throw an error if "category" is missing', () => {
-      var fn = function() {
-        timing.send();
-      };
-      expect(fn).toThrowError('Category is missing.');
     });
     it('should send the duration to Google Analytics', done => {
       spyOn(window, 'ga');

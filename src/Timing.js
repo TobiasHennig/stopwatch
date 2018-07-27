@@ -3,7 +3,7 @@ const SUPPORTS_PERF_MARK = !!(performance && performance.mark);
 export default class Timing {
   constructor(name) {
     this.name = name;
-    this.category;
+    this.category = 'default';
     this.duration = -1;
     this.startTime = -1;
   }

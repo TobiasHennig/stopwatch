@@ -1,4 +1,4 @@
-/*! StopWatch v1.2.1 | (c) Tobias Hennig | License MIT */
+/*! StopWatch v1.3.0 | (c) Tobias Hennig | License MIT */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
@@ -9,7 +9,7 @@ var SUPPORTS_PERF_MARK = !!(performance && performance.mark);
 
 var Timing = function Timing(name) {
   this.name = name;
-  this.category;
+  this.category = 'default';
   this.duration = -1;
   this.startTime = -1;
 };
@@ -103,9 +103,9 @@ StopWatch.prototype.get = function get (name) {
 StopWatch.prototype.clear = function clear (name) {
   var timings = this._timings;
   if (typeof name === 'string') {
-    var timing = this.constructor.find(timings, name);
+    var timing = StopWatch.find(timings, name);
     timing.clear();
-    this.constructor.clear(timings, timing);
+    StopWatch.clear(timings, timing);
   } else {
     timings.forEach(function (timing) { return timing.clear(); });
     timings.length = 0;
@@ -115,11 +115,11 @@ StopWatch.prototype.clear = function clear (name) {
 StopWatch.prototype.send = function send (name) {
   var timings = this._timings;
   if (typeof name === 'string') {
-    var timing = this.constructor.find(timings, name);
+    var timing = StopWatch.find(timings, name);
     if (!timing) { throw new Error('Timing is missing.'); }
     timing.send();
   } else {
-    this.constructor.send(timings);
+    StopWatch.send(timings);
   }
   return this;
 };
