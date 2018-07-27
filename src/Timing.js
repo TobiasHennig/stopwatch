@@ -11,7 +11,7 @@ export default class Timing {
     return performance && performance.now ? performance.now() : Date.now();
   }
   start() {
-    this.startTime = this.constructor.now();
+    this.startTime = Timing.now();
     /* istanbul ignore else */
     if (SUPPORTS_PERF_MARK) {
       performance.mark(`stopwatch:mark_${this.name}_start`);
@@ -21,7 +21,7 @@ export default class Timing {
   stop() {
     if (this.startTime === -1) throw new Error('Start time is missing.');
     let mark = `stopwatch:mark_${this.name}_`;
-    this.duration = this.constructor.now() - this.startTime;
+    this.duration = Timing.now() - this.startTime;
     /* istanbul ignore else */
     if (
       SUPPORTS_PERF_MARK &&

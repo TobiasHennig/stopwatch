@@ -33,7 +33,7 @@ class StopWatch {
   get(name) {
     let timings = this._timings;
     if (typeof name === 'string') {
-      return this.constructor.find(timings, name);
+      return StopWatch.find(timings, name);
     } else {
       return this._timings;
     }

@@ -17,7 +17,7 @@ Timing.now = function now () {
   return performance && performance.now ? performance.now() : Date.now();
 };
 Timing.prototype.start = function start () {
-  this.startTime = this.constructor.now();
+  this.startTime = Timing.now();
   /* istanbul ignore else */
   if (SUPPORTS_PERF_MARK) {
     performance.mark(("stopwatch:mark_" + (this.name) + "_start"));
@@ -27,7 +27,7 @@ Timing.prototype.start = function start () {
 Timing.prototype.stop = function stop () {
   if (this.startTime === -1) { throw new Error('Start time is missing.'); }
   var mark = "stopwatch:mark_" + (this.name) + "_";
-  this.duration = this.constructor.now() - this.startTime;
+  this.duration = Timing.now() - this.startTime;
   /* istanbul ignore else */
   if (
     SUPPORTS_PERF_MARK &&
@@ -95,7 +95,7 @@ StopWatch.prototype.create = function create (name, options) {
 StopWatch.prototype.get = function get (name) {
   var timings = this._timings;
   if (typeof name === 'string') {
-    return this.constructor.find(timings, name);
+    return StopWatch.find(timings, name);
   } else {
     return this._timings;
   }
