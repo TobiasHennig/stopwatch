@@ -5,7 +5,7 @@
 # StopWatch [![Build Status](https://travis-ci.org/TobiasHennig/stopwatch.svg?branch=master)](https://travis-ci.org/TobiasHennig/stopwatch)
 > Accurately measure elapsed time in JavaScript.
 
-* 820 B minified and gzipped
+* 773 B minified and gzipped
 * No external dependencies
 * Send timings to [Google Analytics User Timing](https://developers.google.com/analytics/devguides/collection/analyticsjs/user-timings)
 * [Universal Module Definition (UMD)](https://github.com/umdjs/umd) API

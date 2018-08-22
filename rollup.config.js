@@ -1,7 +1,7 @@
 import buble from 'rollup-plugin-buble';
 import filesize from 'rollup-plugin-filesize';
 import license from 'rollup-plugin-license';
-import uglify from 'rollup-plugin-uglify';
+import { uglify } from 'rollup-plugin-uglify';
 
 export default [
   {
